@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Omar Allahham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body class="page-projects">
+  <canvas id="universe-canvas"></canvas>
+  <nav class="main-nav" id="main-nav">
+    <div class="nav-brand">
+      <a href="index.html" class="brand-link">
+        <span class="brand-symbol">&lt;/&gt;</span>
+        <span class="brand-text">Omar</span>
+      </a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="nav-link"><span>01</span> Home</a></li>
+      <li><a href="about.html" class="nav-link"><span>02</span> About</a></li>
+      <li><a href="skills.html" class="nav-link"><span>03</span> Skills</a></li>
+      <li><a href="experience.html" class="nav-link"><span>04</span> Experience</a></li>
+      <li><a href="projects.html" class="nav-link active"><span>05</span> Projects</a></li>
+      <li><a href="contact.html" class="nav-link"><span>06</span> Contact</a></li>
+    </ul>
+  </nav>
+  <div class="page-transition" id="page-transition"></div>
+  <main class="main-content">
+
+<section class="page-header">
+  <div class="page-header-content">
+    <span class="page-number">05</span>
+    <h1 class="page-title">Projects</h1>
+    <p class="page-subtitle">Shipped, shipping, and on the roadmap</p>
+  </div>
+</section>
+
+<section class="projects-section">
+  <div class="projects-filter">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="shipped">Shipped</button>
+    <button class="filter-btn" data-filter="progress">In Progress</button>
+    <button class="filter-btn" data-filter="planned">Planned</button>
+  </div>
+
+  <div class="projects-grid">
+    <article class="project-showcase" data-category="shipped" data-animate>
+      <div class="showcase-visual">
+        <div class="showcase-placeholder">
+          <span class="placeholder-icon">📋</span>
+          <span class="placeholder-text">Job Application Tracker</span>
+        </div>
+        <div class="showcase-overlay">
+          <a href="https://github.com/Omar-Allaham25/job-tracker" target="_blank" class="overlay-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            View Code
+          </a>
+        </div>
+      </div>
+      <div class="showcase-info">
+        <div class="showcase-meta">
+          <span class="showcase-status shipped">Shipped</span>
+          <span class="showcase-type">Full-stack · Personal</span>
+        </div>
+        <h3 class="showcase-title">Job Application Tracker</h3>
+        <p class="showcase-desc">End-to-end job application manager: Node/Express API + React/TypeScript frontend. JWT + bcrypt auth, with Helmet and rate-limiting. MySQL schema with enum-based status validation, MVC structure, centralized error handling. Every endpoint tested in Postman before it shipped.</p>
+        <div class="showcase-tech">
+          <span>Node.js</span><span>Express</span><span>React</span><span>TypeScript</span><span>MySQL</span><span>JWT</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-showcase" data-category="progress" data-animate>
+      <div class="showcase-visual">
+        <div class="showcase-placeholder">
+          <span class="placeholder-icon">🛒</span>
+          <span class="placeholder-text">Student Marketplace</span>
+        </div>
+        <div class="showcase-overlay">
+          <a href="https://github.com/Omar-Allaham25/student-marketplace" target="_blank" class="overlay-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            View Code
+          </a>
+        </div>
+      </div>
+      <div class="showcase-info">
+        <div class="showcase-meta">
+          <span class="showcase-status progress">In Progress</span>
+          <span class="showcase-type">Full-stack · Personal</span>
+        </div>
+        <h3 class="showcase-title">Student Marketplace</h3>
+        <p class="showcase-desc">A marketplace where students buy and sell items — Node.js backend, React/TypeScript frontend. REST APIs handling product listings, authentication, and transaction flows. Global cart and auth state managed with React Context. Normalized PostgreSQL schema.</p>
+        <div class="showcase-tech">
+          <span>Node.js</span><span>React</span><span>TypeScript</span><span>PostgreSQL</span><span>Context API</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-showcase" data-category="planned" data-animate>
+      <div class="showcase-visual">
+        <div class="showcase-placeholder planned">
+          <span class="placeholder-icon">🌑</span>
+          <span class="placeholder-text">Project Eclipse</span>
+        </div>
+        <div class="showcase-overlay">
+          <span class="overlay-link disabled">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            Coming Soon
+          </span>
+        </div>
+      </div>
+      <div class="showcase-info">
+        <div class="showcase-meta">
+          <span class="showcase-status planned">In Planning</span>
+          <span class="showcase-type">SaaS · Early Design</span>
+        </div>
+        <h3 class="showcase-title">Project Eclipse</h3>
+        <p class="showcase-desc">A SaaS idea I'm not ready to spill yet — right now it's whiteboards, feature lists, and picking the stack. Full case study drops when there's something real to show.</p>
+        <div class="showcase-tech"><span>TBD</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p class="footer-text">Built with curiosity & caffeine</p>
+      <div class="footer-links">
+        <a href="https://github.com/Omar-Allaham25" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/omaraliallaham" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://codeforces.com/profile/omarallahham" target="_blank" rel="noopener">Codeforces</a>
+      </div>
+    </div>
+  </footer>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
