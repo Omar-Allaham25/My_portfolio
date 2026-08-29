@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omar Allahham — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body class="page-home">
+  <canvas id="universe-canvas"></canvas>
+  <nav class="main-nav" id="main-nav">
+    <div class="nav-brand">
+      <a href="index.html" class="brand-link">
+        <span class="brand-symbol">&lt;/&gt;</span>
+        <span class="brand-text">Omar</span>
+      </a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="nav-link active"><span>01</span> Home</a></li>
+      <li><a href="about.html" class="nav-link"><span>02</span> About</a></li>
+      <li><a href="skills.html" class="nav-link"><span>03</span> Skills</a></li>
+      <li><a href="experience.html" class="nav-link"><span>04</span> Experience</a></li>
+      <li><a href="projects.html" class="nav-link"><span>05</span> Projects</a></li>
+      <li><a href="contact.html" class="nav-link"><span>06</span> Contact</a></li>
+    </ul>
+  </nav>
+  <div class="page-transition" id="page-transition"></div>
+  <main class="main-content">
+
+<section class="hero-section">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="status-dot"></span>
+      <span class="status-text">Open to opportunities</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="title-line">Omar</span>
+      <span class="title-line gradient">Allahham</span>
+    </h1>
+    <div class="hero-subtitle">
+      <span class="typing-text" id="typing-text"></span>
+      <span class="typing-cursor">|</span>
+    </div>
+    <p class="hero-description">
+      Software Engineer who builds things end-to-end. 
+      Currently contributing to <a href="https://meshery.io" target="_blank" class="highlight-link">Meshery</a> (CNCF) 
+      and shipping personal projects while seeking the next challenge.
+    </p>
+    <div class="hero-cta">
+      <a href="projects.html" class="btn btn-primary">
+        <span>Explore Projects</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="contact.html" class="btn btn-secondary">
+        <span>Get in Touch</span>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number" data-target="3">0</span>
+        <span class="stat-label">Years Coding</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="15">0</span>
+        <span class="stat-label">Projects Shipped</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="1000">0</span>
+        <span class="stat-label">Commits</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="orbit-container">
+      <div class="orbit orbit-1"><div class="orbit-icon" style="--delay:0s">⚛️</div></div>
+      <div class="orbit orbit-2"><div class="orbit-icon" style="--delay:2s">▲</div></div>
+      <div class="orbit orbit-3"><div class="orbit-icon" style="--delay:4s">●</div></div>
+      <div class="center-avatar">
+        <img src="https://omar-portfolio.lahamomar25.workers.dev/photo.jpg" alt="Omar Allahham" class="avatar-img">
+        <div class="avatar-ring"></div>
+        <div class="avatar-glow"></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<section class="quick-about">
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2 class="section-title">Quick Intro</h2>
+  </div>
+  <div class="quick-about-content">
+    <p class="lead-text">
+      B.Sc. Software Engineering from <strong>Hashemite University</strong> (Class of 2026). 
+      Based in Amman, Jordan. I like problems with clean solutions — 
+      the kind you can still explain to your future self at 2am.
+    </p>
+    <a href="about.html" class="text-link">Read full story →</a>
+  </div>
+</section>
+
+<section class="featured-projects">
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2 class="section-title">Featured Work</h2>
+  </div>
+  <div class="project-grid">
+    <article class="project-card featured">
+      <div class="project-card-inner">
+        <div class="project-meta">
+          <span class="project-status shipped">Shipped</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h3 class="project-name">Job Application Tracker</h3>
+        <p class="project-desc">End-to-end job application manager with JWT auth, MySQL, and a polished React frontend.</p>
+        <div class="project-tech">
+          <span>Node.js</span><span>Express</span><span>React</span><span>TypeScript</span><span>MySQL</span>
+        </div>
+        <div class="project-card-back">
+          <a href="https://github.com/omarallahham/job-tracker" target="_blank" class="project-link">
+            <span>View on GitHub</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>
+    <article class="project-card">
+      <div class="project-card-inner">
+        <div class="project-meta">
+          <span class="project-status progress">In Progress</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h3 class="project-name">Student Marketplace</h3>
+        <p class="project-desc">A marketplace for students to buy and sell items. PostgreSQL backend with React Context state management.</p>
+        <div class="project-tech">
+          <span>Node.js</span><span>React</span><span>TypeScript</span><span>PostgreSQL</span>
+        </div>
+        <div class="project-card-back">
+          <a href="https://github.com/omarallahham/student-marketplace" target="_blank" class="project-link">
+            <span>View on GitHub</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+  <a href="projects.html" class="text-link">View all projects →</a>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p class="footer-text">Built with curiosity & caffeine</p>
+      <div class="footer-links">
+        <a href="https://github.com/omarallahham" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/omarallahham" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://codeforces.com/profile/omarallahham" target="_blank" rel="noopener">Codeforces</a>
+      </div>
+    </div>
+  </footer>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
