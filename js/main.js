@@ -13,6 +13,7 @@
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let particles = [];
   let mouse = { x: null, y: null };
   let animationId;
@@ -104,12 +105,18 @@
 
   resizeCanvas();
   initParticles();
-  animate();
+  if (prefersReducedMotion) {
+    particles.forEach(p => p.draw());
+    drawConnections();
+  } else {
+    animate();
+  }
 
   window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
   window.addEventListener('mousemove', (e) => { mouse.x = e.x; mouse.y = e.y; });
   window.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
   document.addEventListener('visibilitychange', () => {
+    if (prefersReducedMotion) return;
     if (document.hidden) { isActive = false; cancelAnimationFrame(animationId); }
     else { isActive = true; animate(); }
   });
@@ -120,23 +127,27 @@
   const typingElement = document.getElementById('typing-text');
   if (typingElement) {
     const phrases = ['Full-Stack Developer', 'Open Source Contributor', 'Problem Solver', 'Software Engineer'];
-    let phraseIndex = 0, charIndex = 0, isDeleting = false, typingSpeed = 100;
-    function type() {
-      const currentPhrase = phrases[phraseIndex];
-      if (isDeleting) {
-        typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
-        charIndex--;
-        typingSpeed = 50;
-      } else {
-        typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
-        charIndex++;
-        typingSpeed = 100;
+    if (prefersReducedMotion) {
+      typingElement.textContent = phrases[0];
+    } else {
+      let phraseIndex = 0, charIndex = 0, isDeleting = false, typingSpeed = 100;
+      function type() {
+        const currentPhrase = phrases[phraseIndex];
+        if (isDeleting) {
+          typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+          charIndex--;
+          typingSpeed = 50;
+        } else {
+          typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+          charIndex++;
+          typingSpeed = 100;
+        }
+        if (!isDeleting && charIndex === currentPhrase.length) { typingSpeed = 2000; isDeleting = true; }
+        else if (isDeleting && charIndex === 0) { isDeleting = false; phraseIndex = (phraseIndex + 1) % phrases.length; typingSpeed = 500; }
+        setTimeout(type, typingSpeed);
       }
-      if (!isDeleting && charIndex === currentPhrase.length) { typingSpeed = 2000; isDeleting = true; }
-      else if (isDeleting && charIndex === 0) { isDeleting = false; phraseIndex = (phraseIndex + 1) % phrases.length; typingSpeed = 500; }
-      setTimeout(type, typingSpeed);
+      setTimeout(type, 1000);
     }
-    setTimeout(type, 1000);
   }
 
   // ========================================
@@ -154,15 +165,23 @@
   }
 
   if (navToggle && navLinks) {
+    function setNavOpen(isOpen) {
+      navToggle.classList.toggle('active', isOpen);
+      navLinks.classList.toggle('active', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('nav-open', isOpen);
+    }
+
     navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('active');
-      navLinks.classList.toggle('active');
+      setNavOpen(!navLinks.classList.contains('active'));
     });
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navLinks.classList.remove('active');
+        setNavOpen(false);
       });
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setNavOpen(false);
     });
   }
 
@@ -174,7 +193,8 @@
     window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      scrollProgress.style.width = (scrollTop / docHeight * 100) + '%';
+      const progress = docHeight > 0 ? (scrollTop / docHeight * 100) : 0;
+      scrollProgress.style.width = progress + '%';
     });
   }
 
